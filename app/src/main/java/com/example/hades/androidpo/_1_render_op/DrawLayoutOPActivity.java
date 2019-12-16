@@ -86,7 +86,7 @@ public class DrawLayoutOPActivity extends BaseActivity {
     }
 
     private void reuseAdapterItemViewInListVieW() {
-        showFragment(new ReuseAdapterItemViewInListVieWFragment());
+//        showFragment(new ReuseAdapterItemViewInListVieWFragment());
     }
 
     private void monitorJank() {

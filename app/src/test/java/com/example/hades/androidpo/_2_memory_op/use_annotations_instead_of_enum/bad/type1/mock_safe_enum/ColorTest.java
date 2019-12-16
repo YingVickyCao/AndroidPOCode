@@ -1,5 +1,7 @@
 package com.example.hades.androidpo._2_memory_op.use_annotations_instead_of_enum.bad.type1.mock_safe_enum;
 
+import com.example.hades.androidpo._2_memory_op.use_annotations_instead_of_enum.bad.dev_use.Color;
+
 import org.junit.Test;
 
 public class ColorTest {
