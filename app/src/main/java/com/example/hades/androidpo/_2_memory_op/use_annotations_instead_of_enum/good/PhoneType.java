@@ -20,6 +20,10 @@ public class PhoneType {
     public @interface Type {//接口，定义新的注解类型
     }
 
+    public PhoneType(@Type String type) {
+        mType = type;
+    }
+
     public @Type
     String getType() {
         return mType;
@@ -29,10 +33,12 @@ public class PhoneType {
         mType = type;
     }
 
-    public PhoneType(@Type String type) {
-        mType = type;
+    @Override
+    public String toString() {
+        return mType;
     }
 
+    // Depressed,start
     public static PhoneType create(@Type String type) {
         PhoneType color = new PhoneType(type);
         getValues().add(color);
@@ -47,4 +53,5 @@ public class PhoneType {
         }
         return mValues;
     }
+    // Depressed,end
 }

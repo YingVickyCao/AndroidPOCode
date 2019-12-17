@@ -21,7 +21,9 @@ public class PhoneTypeTestCase {
 //        System.out.println(type3);
 
 
-        PhoneType type4 = new PhoneType(ColorConstants.IOS);
-        System.out.println(type4.getType());    // ANDROID
+        PhoneType type4 = PhoneType.create(ColorConstants.IOS);
+        System.out.println(type4.getType());    // IOS
+
+        System.out.println(PhoneType.getValues());// [IOS]
     }
 }
