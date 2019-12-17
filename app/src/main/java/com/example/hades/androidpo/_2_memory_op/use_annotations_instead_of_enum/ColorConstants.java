@@ -10,5 +10,7 @@ public class ColorConstants {
     public static final String BLUE = "BLUE";
     public static final String ANDROID = "ANDROID";
     public static final String IOS = "IOS";
+    public static final String ONE = "ONE";
+    public static final String TWO = "TWO";
 
 }

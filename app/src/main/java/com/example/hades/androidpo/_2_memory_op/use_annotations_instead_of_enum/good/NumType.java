@@ -1,15 +1,15 @@
-package com.example.hades.androidpo._2_memory_op.use_annotations_instead_of_enum.good2;
+package com.example.hades.androidpo._2_memory_op.use_annotations_instead_of_enum.good;
 
 import com.example.hades.androidpo._2_memory_op.use_annotations_instead_of_enum.ColorConstants;
 
 // 类型安全
-public class Color {
+public class NumType {
     private String mType;
 
     //这是一个私有的构造器，意味着在这个类的外部没有办法去实例化一个该类的对象。
     // 类型安全
-    private Color(String color) {
-        this.mType = color;
+    private NumType(String value) {
+        this.mType = value;
     }
 
     public String getType() {
@@ -20,7 +20,7 @@ public class Color {
 //        mType = type;
 //    }
 
-    public void setType(Color type) {
+    public void setType(NumType type) {
         if (null != type) {
             mType = type.getType();
         } else {
@@ -29,8 +29,6 @@ public class Color {
     }
 
     // 实例化该类的对象，供外部类使用。
-    public static final Color RED = new Color(ColorConstants.RED);
-    public static final Color GREEN = new Color(ColorConstants.GREEN);
-    public static final Color YELLOW = new Color(ColorConstants.YELLOW);
-    public static final Color BLUE = new Color(ColorConstants.BLUE);
+    public static final NumType ONE = new NumType(ColorConstants.ONE);
+    public static final NumType TWO = new NumType(ColorConstants.TWO);
 }
