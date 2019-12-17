@@ -1,6 +1,7 @@
 package com.example.hades.androidpo._2_memory_op.use_annotations_instead_of_enum.bad.type2;
 
-import com.example.hades.androidpo._2_memory_op.use_annotations_instead_of_enum.good.TestCase;
+
+import com.example.hades.androidpo._2_memory_op.use_annotations_instead_of_enum.bad.normal.TestCase;
 
 import org.junit.Test;
 
