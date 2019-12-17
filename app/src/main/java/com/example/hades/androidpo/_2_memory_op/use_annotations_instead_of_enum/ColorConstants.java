@@ -8,4 +8,7 @@ public class ColorConstants {
     public static final String GREEN = "GREEN";
     public static final String YELLOW = "YELLOW";
     public static final String BLUE = "BLUE";
+    public static final String ANDROID = "ANDROID";
+    public static final String IOS = "IOS";
+
 }

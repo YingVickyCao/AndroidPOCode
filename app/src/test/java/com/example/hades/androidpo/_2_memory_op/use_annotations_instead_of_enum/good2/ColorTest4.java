@@ -1,10 +1,10 @@
-package com.example.hades.androidpo._2_memory_op.use_annotations_instead_of_enum.bad.type1.mock_safe_enum;
+package com.example.hades.androidpo._2_memory_op.use_annotations_instead_of_enum.good2;
 
 import com.example.hades.androidpo._2_memory_op.use_annotations_instead_of_enum.bad.dev_use.Color;
 
 import org.junit.Test;
 
-public class ColorTest {
+public class ColorTest4 {
     @Test
     public void getType() throws Exception {
         // 类型安全
