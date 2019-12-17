@@ -1,4 +1,4 @@
-package com.example.hades.androidpo._2_memory_op.use_annotations_instead_of_enum.bad.normal;
+package com.example.hades.androidpo._2_memory_op.use_annotations_instead_of_enum.bad;
 
 import com.example.hades.androidpo._2_memory_op.use_annotations_instead_of_enum.ColorConstants;
 
@@ -9,6 +9,8 @@ import com.example.hades.androidpo._2_memory_op.use_annotations_instead_of_enum.
     反编译
     javap -c  Color.class > Color.class.txt
     javap  Color.class > Color.class_2.txt
+
+    Type is not safe
  */
 public enum Color {
     RED(ColorConstants.RED), GREEN(ColorConstants.GREEN), YELLOW(ColorConstants.YELLOW), BLUE(ColorConstants.BLUE);
