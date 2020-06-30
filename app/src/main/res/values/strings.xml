@@ -12,11 +12,12 @@
     <string name="download_files">Download files</string>
     <string name="play_music">Play music</string>
     <string name="show_map">Show map</string>
+    <string name="hide_map">Hide map</string>
     <string name="footer_text">2012 - NTM</string>
     <string name="monitor_jank_start">开始卡顿监控</string>
     <string name="monitor_jank_stop">停止卡顿监控</string>
     <string name="ok">OK</string>
-    
+
     <string name="read">Read</string>
     <string name="write">Write</string>
     <string name="detect_network_in_ui_thread">detect Network in UI Thread</string>

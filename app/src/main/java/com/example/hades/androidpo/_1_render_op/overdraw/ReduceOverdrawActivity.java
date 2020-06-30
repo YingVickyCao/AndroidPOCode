@@ -1,7 +1,7 @@
 package com.example.hades.androidpo._1_render_op.overdraw;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.example.hades.androidpo.BaseActivity;
 import com.example.hades.androidpo.R;

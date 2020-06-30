@@ -17,6 +17,12 @@
         android:layout_below="@+id/topic"
         android:text="@string/show_map" />
 
+    <Button
+        android:id="@+id/hideMap"
+        style="@style/btn"
+        android:layout_below="@+id/showMap"
+        android:text="@string/hide_map" />
+
     <ViewStub
         android:id="@+id/map_stub"
         android:layout_width="wrap_content"

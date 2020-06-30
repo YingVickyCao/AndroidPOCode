@@ -2,7 +2,7 @@ package com.example.hades.androidpo._1_render_op._not_block_ui.thread;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;

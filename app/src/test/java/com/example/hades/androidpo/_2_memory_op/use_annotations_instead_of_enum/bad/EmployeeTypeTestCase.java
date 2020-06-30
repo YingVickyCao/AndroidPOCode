@@ -1,6 +1,6 @@
 package com.example.hades.androidpo._2_memory_op.use_annotations_instead_of_enum.bad;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 
 public class EmployeeTypeTestCase {
     public void test() {

@@ -2,7 +2,7 @@ package com.example.hades.androidpo._2_memory_op.memory_leak.newed_anonymous_cla
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

@@ -89,7 +89,7 @@
         android:layout_marginTop="10dp"
         android:text="ConstraintLayout(After)" />
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="80dp">
 
@@ -116,5 +116,5 @@
             android:background="@android:color/holo_orange_dark"
             app:layout_constraintBottom_toBottomOf="@+id/top2"
             app:layout_constraintLeft_toRightOf="@+id/left2" />
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

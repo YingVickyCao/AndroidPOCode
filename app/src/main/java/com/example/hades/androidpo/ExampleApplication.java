@@ -3,12 +3,9 @@ package com.example.hades.androidpo;
 import android.app.Application;
 import android.util.Log;
 
-import com.squareup.leakcanary.LeakCanary;
-
-import static android.support.constraint.Constraints.TAG;
-
 
 public class ExampleApplication extends Application {
+    private static final String TAG = ExampleApplication.class.getSimpleName();
 
     @Override
     public void onCreate() {

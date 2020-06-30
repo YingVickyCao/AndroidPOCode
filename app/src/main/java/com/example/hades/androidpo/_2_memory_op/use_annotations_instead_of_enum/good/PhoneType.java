@@ -1,6 +1,6 @@
 package com.example.hades.androidpo._2_memory_op.use_annotations_instead_of_enum.good;
 
-import android.support.annotation.StringDef;
+import androidx.annotation.StringDef;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

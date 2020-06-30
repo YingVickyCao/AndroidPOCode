@@ -1,7 +1,7 @@
 package com.example.hades.androidpo._2_memory_op.memory_leak.monitor;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.widget.TextView;
 
 import com.example.hades.androidpo.BaseActivity;
