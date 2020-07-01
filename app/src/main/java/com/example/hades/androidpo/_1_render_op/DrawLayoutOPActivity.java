@@ -74,7 +74,7 @@ public class DrawLayoutOPActivity extends BaseActivity {
     }
 
     private void viewStub() {
-        showFragment(new ViewStubFragment());
+        showFragment(ViewStubFragment.newInstance(15));
     }
 
     private void include() {

@@ -20,6 +20,15 @@ public class ViewStubFragment extends Fragment {
     private View mapView;
     private View mRoot;
 
+    public static Fragment newInstance(int num) {
+        final Fragment fragment = new ViewStubFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt("KEY_NUM", num);
+        fragment.setArguments(bundle);
+        return fragment;
+    }
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -29,6 +38,9 @@ public class ViewStubFragment extends Fragment {
         mRoot = view;
         viewStub = view.findViewById(R.id.map_stub);
         mapView = mRoot.findViewById(R.id.map_view);
+
+//        Log.d(TAG, "onCreateView: savedInstanceState hashCode=" + (null == savedInstanceState ? "null" : savedInstanceState.hashCode())
+//                + ",getArguments hashCode=" + (null == getArguments() ? "null" : getArguments().hashCode()));
         return view;
     }
 
@@ -66,7 +78,11 @@ public class ViewStubFragment extends Fragment {
         } else {
             if (null != viewStub) {
                 Log.d(TAG, "showMap: viewStub.setVisibility(View.VISIBLE)");
-                mapView = viewStub.inflate();
+//                mapView = viewStub.inflate();
+                viewStub.setVisibility(View.VISIBLE);
+                mapView = mRoot.findViewById(R.id.map_view);
+                // should set viewStub = null, after find mapView
+//                viewStub = null;
                 Log.d(TAG, "showMap: before second time find id, viewStub=" + convertVisibility(viewStub));
                 viewStub = mRoot.findViewById(R.id.map_stub);
                 Log.d(TAG, "showMap: after second time find id, viewStub=" + convertVisibility(viewStub));
