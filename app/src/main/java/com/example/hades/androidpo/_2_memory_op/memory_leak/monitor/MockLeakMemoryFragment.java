@@ -1,8 +1,9 @@
 package com.example.hades.androidpo._2_memory_op.memory_leak.monitor;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;

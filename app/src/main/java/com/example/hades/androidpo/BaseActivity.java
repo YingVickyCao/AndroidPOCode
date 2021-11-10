@@ -1,19 +1,20 @@
 package com.example.hades.androidpo;
 
-import android.app.Activity;
-import android.app.Fragment;
 import android.content.Intent;
-import com.google.android.material.snackbar.Snackbar;
 import android.view.View;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
+import com.google.android.material.snackbar.Snackbar;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
-public class BaseActivity extends Activity {
+public class BaseActivity extends AppCompatActivity {
     protected void startActivity(Class<?> cls) {
         startActivity(new Intent(this, cls));
     }
@@ -73,18 +74,18 @@ public class BaseActivity extends Activity {
     }
 
     protected void removeDetailFragment() {
-        Fragment fragment = getFragmentManager().findFragmentById(R.id.fragmentRoot);
-        getFragmentManager().beginTransaction().remove(fragment).commit();
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragmentRoot);
+        getSupportFragmentManager().beginTransaction().remove(fragment).commit();
     }
 
     protected void showFragment(Fragment fragment) {
         hideBtns();
-        getFragmentManager().beginTransaction().replace(R.id.fragmentRoot, fragment, fragment.getClass().getSimpleName()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentRoot, fragment, fragment.getClass().getSimpleName()).commit();
     }
 
     protected void showFragment(Fragment fragment, String tag) {
         hideBtns();
-        getFragmentManager().beginTransaction().replace(R.id.fragmentRoot, fragment, tag).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentRoot, fragment, tag).commit();
     }
 
     protected void showActivity(Class<?> dest) {

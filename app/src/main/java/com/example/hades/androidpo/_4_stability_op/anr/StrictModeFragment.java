@@ -1,6 +1,6 @@
 package com.example.hades.androidpo._4_stability_op.anr;
 
-import android.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;

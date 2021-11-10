@@ -14,11 +14,11 @@ import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
+
 import com.example.hades.androidpo.BaseActivity;
 import com.example.hades.androidpo.MainActivity;
 import com.example.hades.androidpo.R;
-import com.example.hades.androidpo.monitor.time.TimeMonitorConfig;
-import com.example.hades.androidpo.monitor.time.TimeMonitorManager;
 
 public class WelcomeActivity extends BaseActivity {
     private static final String TAG = WelcomeActivity.class.getSimpleName();
@@ -27,7 +27,7 @@ public class WelcomeActivity extends BaseActivity {
     private final int TIME_ANIMATION = 1500;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@NonNull Bundle savedInstanceState) {
 //        TimeMonitorManager.getInstance().getTimeMonitor(TimeMonitorConfig.TIME_MONITOR_ID_APPLICATION_START).recodingTimeTag(TAG + "_" + TimeMonitorConfig.ON_CREATE + "_" + TimeMonitorConfig.START);
         super.onCreate(savedInstanceState);
 
@@ -120,8 +120,4 @@ public class WelcomeActivity extends BaseActivity {
             finish();
         }
     };
-
-    @Override
-    public void onBackPressed() {
-    }
 }

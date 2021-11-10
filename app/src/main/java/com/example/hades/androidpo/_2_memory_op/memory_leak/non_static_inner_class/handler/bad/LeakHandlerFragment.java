@@ -1,6 +1,6 @@
 package com.example.hades.androidpo._2_memory_op.memory_leak.non_static_inner_class.handler.bad;
 
-import android.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;

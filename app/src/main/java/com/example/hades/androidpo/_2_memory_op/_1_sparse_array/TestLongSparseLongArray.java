@@ -1,4 +1,4 @@
-package com.example.hades.androidpo._2_memory_op.sparse_array;
+package com.example.hades.androidpo._2_memory_op._1_sparse_array;
 
 import android.util.ArrayMap;
 import android.util.SparseLongArray;

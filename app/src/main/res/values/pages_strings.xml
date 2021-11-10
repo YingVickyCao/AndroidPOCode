@@ -15,7 +15,7 @@
     <string name="page_reduce_overdraw_4_Reduce_transparent_animations">Reduce transparent animations</string>
     <string name="page_monitor_jank">卡顿监控</string>
     <string name="page_monitor_leak_memory">Mock leak memory and Monitor(Fragment)</string>
-    <string name="page_monitor_leak_memory_4_activity">Mock leak memory and Monitor(Activity)</string>
+    <string name="page_forbid_user_fast_click">Forbid user fast click</string>
 
     <string name="page_op_draw_layout">OP Draw layout</string>
     <string name="page_op_memory">OP Memory</string>

@@ -1,6 +1,5 @@
 package com.example.hades.androidpo._1_render_op.overdraw.custom_view;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -8,6 +7,8 @@ import android.graphics.RectF;
 import android.os.Bundle;
 import android.os.PowerManager;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;

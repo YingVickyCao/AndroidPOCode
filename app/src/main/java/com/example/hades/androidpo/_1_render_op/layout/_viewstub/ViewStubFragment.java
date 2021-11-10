@@ -1,6 +1,6 @@
 package com.example.hades.androidpo._1_render_op.layout._viewstub;
 
-import android.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;

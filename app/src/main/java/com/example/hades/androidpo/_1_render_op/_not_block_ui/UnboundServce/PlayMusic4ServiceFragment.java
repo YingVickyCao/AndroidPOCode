@@ -1,6 +1,6 @@
 package com.example.hades.androidpo._1_render_op._not_block_ui.UnboundServce;
 
-import android.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;

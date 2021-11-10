@@ -33,7 +33,6 @@
         <activity android:name="._1_render_op.overdraw.ReduceOverdrawActivity" />
 
         <activity android:name="._2_memory_op.MemoryOPActivity" />
-        <activity android:name="._2_memory_op.memory_leak.monitor.MockLeakMemoryActivity" />
 
         <activity android:name="._4_stability_op.StabilityOPActivity" />
 

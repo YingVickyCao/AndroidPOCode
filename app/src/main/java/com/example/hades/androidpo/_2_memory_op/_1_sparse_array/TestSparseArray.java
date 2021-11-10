@@ -1,4 +1,4 @@
-package com.example.hades.androidpo._2_memory_op.sparse_array;
+package com.example.hades.androidpo._2_memory_op._1_sparse_array;
 
 import android.util.SparseArray;
 
@@ -98,7 +98,7 @@ public class TestSparseArray {
     }
 
 
-    // HashMap 的查找
+    // HashMap 的遍历
     // 100->HashMap: Search used time=1,used memory=0
     // 500->HashMap: Search used time=20,used memory=0
     // 1000->HashMap: Search used time=39,used memory=0
@@ -121,7 +121,7 @@ public class TestSparseArray {
         System.out.println(String.valueOf(MAX) + "->HashMap: Search used time=" + (endTime - startTime) + ",used memory=" + (endMemory - startMemory));
     }
 
-    // SparseArray的查找
+    // SparseArray的遍历
     // 100->SparseArray:search used time=0,used memory=0
     // 500->SparseArray:search used time=3,used memory=0
     // 1000->SparseArray:search used time=6,used memory=0
@@ -153,7 +153,7 @@ public class TestSparseArray {
     // 1000->HashMap: remove used time=24,used memory=0
     // 5000->HashMap: remove used time=96,used memory=0
     // 65536->HashMap: remove used time=1275,used memory=0
-    // 100000->HashMap: remove used time=5177,used memory=-6198802
+    // 100000->HashMap: remove used time=5177,used memory=6198802
     public void hashMapRemove() {
         HashMap<Integer, String> map = new HashMap<>();
         for (int i = 0; i < MAX; i++) {

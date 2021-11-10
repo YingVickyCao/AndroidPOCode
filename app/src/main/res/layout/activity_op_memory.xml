@@ -26,9 +26,9 @@
                 android:text="@string/page_monitor_leak_memory" />
 
             <Button
-                android:id="@+id/monitorLeakMemory4Activity"
+                android:id="@+id/forbidUserFastClick"
                 style="@style/btn.small"
-                android:text="@string/page_monitor_leak_memory_4_activity" />
+                android:text="@string/page_forbid_user_fast_click" />
 
         </LinearLayout>
     </ScrollView>

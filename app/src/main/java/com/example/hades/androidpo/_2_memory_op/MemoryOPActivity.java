@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.example.hades.androidpo.BaseActivity;
 import com.example.hades.androidpo.R;
-import com.example.hades.androidpo._2_memory_op.memory_leak.monitor.MockLeakMemoryActivity;
+import com.example.hades.androidpo._2_memory_op._2_forbid_fast_click.ForbidFastClickExampleFragment;
 import com.example.hades.androidpo._2_memory_op.memory_leak.monitor.MockLeakMemoryFragment;
 
 public class MemoryOPActivity extends BaseActivity {
@@ -19,7 +19,8 @@ public class MemoryOPActivity extends BaseActivity {
 
         initViews();
         findViewById(R.id.monitorLeakMemory).setOnClickListener(v -> monitorLeakMemory());
-        findViewById(R.id.monitorLeakMemory4Activity).setOnClickListener(v -> monitorLeakMemory4Activity());
+        findViewById(R.id.forbidUserFastClick).setOnClickListener(v -> forbidUserFastClick());
+        forbidUserFastClick();
     }
 
     @Override
@@ -36,8 +37,7 @@ public class MemoryOPActivity extends BaseActivity {
         showFragment(new MockLeakMemoryFragment());
     }
 
-    private void monitorLeakMemory4Activity() {
-        startActivity(MockLeakMemoryActivity.class);
+    private void forbidUserFastClick() {
+        showFragment(new ForbidFastClickExampleFragment());
     }
-
 }

@@ -1,7 +1,7 @@
 package com.example.hades.androidpo._1_render_op.monitor_jank;
 
 import android.app.ActivityManager;
-import android.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;

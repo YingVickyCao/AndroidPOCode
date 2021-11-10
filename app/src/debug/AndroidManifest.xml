@@ -17,7 +17,7 @@
         tools:replace="android:name">
         <service android:name="com.example.hades.androidpo.monitor.memory.leak.MemoryLeakUploadService" />
 
-        <activity android:name="._1_render_op.DrawLayoutOPActivity">
+        <activity android:name="._2_memory_op.MemoryOPActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

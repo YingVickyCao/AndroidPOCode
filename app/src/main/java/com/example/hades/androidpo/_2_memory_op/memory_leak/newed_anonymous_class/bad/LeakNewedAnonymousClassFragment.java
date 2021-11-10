@@ -1,6 +1,6 @@
 package com.example.hades.androidpo._2_memory_op.memory_leak.newed_anonymous_class.bad;
 
-import android.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import android.view.LayoutInflater;

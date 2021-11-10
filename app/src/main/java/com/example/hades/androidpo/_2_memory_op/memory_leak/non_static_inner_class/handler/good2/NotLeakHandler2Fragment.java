@@ -1,6 +1,6 @@
 package com.example.hades.androidpo._2_memory_op.memory_leak.non_static_inner_class.handler.good2;
 
-import android.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.os.Message;
 
 public class NotLeakHandler2Fragment extends Fragment {
