@@ -1,17 +1,15 @@
 package com.example.hades.androidpo._2_memory_op.memory_leak.monitor;
 
 import android.os.Bundle;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.hades.androidpo.BuildConfig;
-import com.example.hades.androidpo.DebugExampleApplication;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import com.example.hades.androidpo.R;
 
 /**
@@ -54,9 +52,6 @@ public class MockLeakMemoryFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        if (BuildConfig.DEBUG) {
-            DebugExampleApplication.getRefWatcher().watch(this);
-        }
     }
 
     protected class LeakThread extends Thread {

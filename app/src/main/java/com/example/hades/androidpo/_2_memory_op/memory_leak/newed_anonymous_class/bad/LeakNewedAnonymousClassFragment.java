@@ -1,15 +1,14 @@
 package com.example.hades.androidpo._2_memory_op.memory_leak.newed_anonymous_class.bad;
 
-import androidx.fragment.app.Fragment;
 import android.os.Bundle;
-import androidx.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.hades.androidpo.BuildConfig;
-import com.example.hades.androidpo.DebugExampleApplication;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import com.example.hades.androidpo.R;
 
 /**
@@ -46,13 +45,4 @@ public class LeakNewedAnonymousClassFragment extends Fragment {
             }
         }).start();
     }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        if (BuildConfig.DEBUG) {
-            DebugExampleApplication.getRefWatcher().watch(this);
-        }
-    }
-
 }
