@@ -28,17 +28,19 @@ public class SlowRenderMainActivity extends AppCompatActivity {
     private TextView tip2;
     private PublishSubject<String> tip1Subject = PublishSubject.create();
     private PublishSubject<String> tip2Subject = PublishSubject.create();
-
+    private static final int MOCK_HEAVY_WORK_SECONDS = 5;
     private RxLifeCycleSchedulerBinder mGuideSubject = new RxLifeCycleAndroidBinderImpl();
 
     protected <T> Observable<T> bindObservable(final Observable<T> source) {
-        return source.compose(mGuideSubject.bindWithScheduler());
+        Observable<T> dest = source.compose(mGuideSubject.bindWithScheduler());
+        Log.e(TAG, "bindObservable:source@" + source.toString() + ",dest@" + source.hashCode());
+        return dest;
     }
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(TAG, "onCreate: ");
+        Log.e(TAG, "onCreate: ");
 
         setContentView(R.layout.activity_slow_render_main_page);
         tip1 = this.findViewById(R.id.tip1);
@@ -48,11 +50,12 @@ public class SlowRenderMainActivity extends AppCompatActivity {
 
         //mStartHandler.sendEmptyMessageDelayed(0,1000);
 //        way1();
-        way2();
+//        way2();
+
         bindObservable(tip1Subject).subscribe(new EndlessObserverRx2<String>() {
             @Override
             public void onNext(@NotNull String s) {
-                Log.d(TAG, "onNext: bindObservable,tip1Subject  onNext:" + s);
+                Log.e(TAG, "onNext: bindObservable,tip1Subject  onNext:" + s);
                 if (tip1 != null) {
                     tip1.setText(s);
                 }
@@ -61,7 +64,7 @@ public class SlowRenderMainActivity extends AppCompatActivity {
         bindObservable(tip2Subject).subscribe(new EndlessObserverRx2<String>() {
             @Override
             public void onNext(@NotNull String s) {
-                Log.d(TAG, "onNext: bindObservable,tip2Subject  onNext:" + s);
+                Log.e(TAG, "onNext: bindObservable,tip2Subject  onNext:" + s);
                 if (tip2 != null) {
                     tip2.setText(s);
                 }
@@ -71,26 +74,26 @@ public class SlowRenderMainActivity extends AppCompatActivity {
 
 
     private void way1() {
-        Log.d(TAG, "way1: ");
-        Log.d(TAG, "way1,tip1 setText");
+        Log.e(TAG, "way1: ");
+        Log.e(TAG, "way1,tip1 setText");
         tip1.setText("Text 1");
         new Thread(new Runnable() { // mock heavy work
             @Override
             public void run() {
-                Log.d(TAG, "way1,run --->: ");
-                for (int i = 0; i < 15; i++) {
-                    Log.d(TAG, "way1,run: on,i:" + i);
+                Log.e(TAG, "way1,run --->: ");
+                for (int i = 0; i < MOCK_HEAVY_WORK_SECONDS; i++) {
+                    Log.e(TAG, "way1,run: on,i:" + i);
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-                Log.d(TAG, "run: <----");
+                Log.e(TAG, "run: <----");
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Log.d(TAG, "way1,tip setText");
+                        Log.e(TAG, "way1,tip setText");
                         tip2.setText("Text 2");
                     }
                 });
@@ -99,86 +102,89 @@ public class SlowRenderMainActivity extends AppCompatActivity {
     }
 
     private void way2() { // mock heavy work
-        Log.d(TAG, "way2: ");
-        Log.d(TAG, "way2:tip setText ");
+        Log.e(TAG, "way2:tip setText ");
+        tip1.setText("Text 1");
         Observable.create((ObservableOnSubscribe<Integer>) e -> {
-            Log.d(TAG, "way2,run:--->");
-            Thread.sleep(1000);
-            tip1Subject.onNext("Text 1");
-            for (int i = 0; i < 15; i++) {
-                Log.d(TAG, "way2,run:on,i:" + i);
+            Log.e(TAG, "way2,run:--->");
+            for (int i = 0; i < MOCK_HEAVY_WORK_SECONDS; i++) {
+                Log.e(TAG, "way2,run:on,i:" + i);
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException ex) {
                     ex.printStackTrace();
                 }
-                Log.d(TAG, "way2,run: ");
+                Log.e(TAG, "way2,run: ");
             }
-            Log.d(TAG, "way2,run:<---");
-            e.onNext(15);
+            Log.e(TAG, "way2,run:<---");
+            e.onNext(MOCK_HEAVY_WORK_SECONDS);
             e.onComplete();
         }).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<Integer>() {
-                    @Override
-                    public void accept(@NonNull Integer integer) throws Exception {
-                        Log.d(TAG, "way2, accept: " + integer);
-                        Log.d(TAG, "way2, tip2 setText:");
-                        tip2.setText("Text 2");
-                    }
-                });
+                               @Override
+                               public void accept(@NonNull Integer integer) throws Exception {
+                                   Log.e(TAG, "way2, accept: " + integer);
+                                   Log.e(TAG, "way2, tip2 setText:");
+                                   tip2.setText("Text 2");
+                               }
+                           }
+                );
     }
 
     private void way3() {
-        Log.d(TAG, "way3: ");
-        Log.d(TAG, "way3:tip setText ");
-        tip1.setText("Text 1");
-        bindObservable(Observable.create((ObservableOnSubscribe<Integer>) e -> {
-            Log.d(TAG, "way3,run:--->");
-            for (int i = 0; i < 15; i++) {
-                Log.d(TAG, "way3,run:on,i:" + i);
+        Log.e(TAG, "way3: ");
+        Observable observable = Observable.create((ObservableOnSubscribe<Integer>) e -> {
+            // Mock heavy work of 1 seconds
+            Thread.sleep(1000);
+            Log.e(TAG, "way3,run:--->");
+            tip1Subject.onNext("Text 1");
+
+            for (int i = 0; i < MOCK_HEAVY_WORK_SECONDS; i++) {
+                Log.e(TAG, "way3,run:on,i:" + i);
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException ex) {
                     ex.printStackTrace();
                 }
-                Log.d(TAG, "way3,run: ");
             }
-            Log.d(TAG, "way3,run:<---");
-            e.onNext(15);
+            Log.e(TAG, "way3,run:<---");
+            e.onNext(MOCK_HEAVY_WORK_SECONDS);
             e.onComplete();
-        }))
+        });
+        Log.e(TAG, "way3: observable@" + observable.hashCode());
+        bindObservable(observable)
                 .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+//                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<Integer>() {
                     @Override
                     public void accept(@NonNull Integer integer) throws Exception {
-                        Log.d(TAG, "way3, accept: " + integer);
-                        tip2.setText("Text 2");
+                        Log.e(TAG, "way3, accept: " + integer);
+                        tip2Subject.onNext("Text 2");
                     }
                 });
     }
 
     private void click() {
-        way2();
+//        way2();
         way3();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d(TAG, "onStart: ");
+        Log.e(TAG, "onStart: ");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d(TAG, "onRestart: ");
+        Log.e(TAG, "onRestart: ");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d(TAG, "onResume: ");
+        Log.e(TAG, "onResume: ");
+        way3();
     }
 }
